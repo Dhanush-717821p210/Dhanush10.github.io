@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <header>
+    <a href="index.html"><button>1st PAGE</button></a>
+        <a href="Calc.html"><button> 2nd Page</button></a>
+        <a href="todo.html"><button>3rd PAGE
+        </button></a>
+     <h1>Calculator</h1>
+  </header>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body class="bodyx">
+<div class="container">
+  <div class="calc-body">
+      <div class="calc-screen">
+          
+          <input id="txt2" class="calc-operation"  type="text" />   
+          <div id="val" ></div><div id="oper"></div><div id="n2"></div><h2 id="res"></h2>
+      </div>
+    <div class="calc-button-row">
+      <div id="clickc" class="button c" onclick= "clickClrEvent()">C</div>
+      <div id="clickclr" class="button l" onclick="clickEventA1()"><</div>
+      <div id="clickmod" class="button l" onclick="clickEventB()">%</div>
+      <div id="clickc1"class="button l" onclick="clickDivEvent()">/</div>
+    </div>
+    <div class="calc-button-row">
+      <div id="clickseven"class="button" onclick="clickEventC7()">7</div>
+      <div id="click8"class="button" onclick="clickEventC8()">8</div>
+      <div id="click9"class="button" onclick="clickEventC9()">9</div>
+      <div id="clickc2"class="button l" onclick="clickMulEvent()">*</div>
+    </div>
+    <div class="calc-button-row">
+      <div id="click4"class="button" onclick="clickEventC4()">4</div>
+      <div id="click5"class="button"onclick="clickEventC5()">5</div>
+      <div id="click6"class="button"onclick="clickEventC6()">6</div>
+      <div id="clickc3"class="button l"onclick="clickSubEvent()">−</div>
+    </div>
+    <div class="calc-button-row">
+      <div id="click1"class="button"onclick="clickEventC1()">1</div>
+      <div id="click2"class="button"onclick="clickEventC2()">2</div>
+      <div id="click3"class="button"onclick="clickEventC3()">3</div>
+      <div id="clickc4"class="button l"onclick="clickAddEvent()">+</div>
+    </div>
+    <div class="calc-button-row">
+      <div id="click00"class="button"onclick="clickEventC00()">00</div>
+      <div id="click0"class="button"onclick="clickEventC0()">0</div>
+      <div id="clickdot"class="button"onclick="clickEventG()">.</div>
+      <div id="clickc5"class="button l"onclick="clickResultEvent()">=</div>
+      </div>
+    </div>
+  </div>
+  <style>
+    * {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: #f3f4f6;
+}
+.bodyx {
+    background-image: url(../img/img1.jpg);
+    background-size: cover;
+}
+.container {
+  width: 400px;
+  margin: auto;
+  padding: 60px;
+}
+
+.calc-body {
+  width: 275px;
+  margin: auto;
+  min-height: 400px;
+  border: solid 1px #3A4655;
+  box-shadow: 0 8px 50px -7px black;
+}
+
+.calc-screen {
+  background: #3A4655;
+  width: 100%;
+  height: 150px;
+  padding: 20px;
+}
+
+.calc-operation {
+  text-align: right;
+  color: #727B86;
+  font-size: 20px;
+  padding-bottom: 10px;
+  border-bottom: dotted 1px;
+}
+
+.calc-typed {
+  margin-top: 20px;
+  font-size: 45px;
+  text-align: right;
+  color: #fff;
+}
+
+.calc-button-row {
+  width: 100%;
+  background: #3C4857;
+}
+
+.button {
+  width: 25%;
+  background: #425062;
+  color: #fff;
+  padding: 20px;
+  display: inline-block;
+  font-size: 25px;
+  text-align: center;
+  vertical-align: middle;
+  margin-right: -4px;
+  border-right: solid 2px #3C4857;
+  border-bottom: solid 2px #3C4857;
+  transition: all 0.2s ease-in-out;
+}
+
+.button.l {
+  color: #AEB3BA;
+  background: #404D5E;
+}
+
+.button.c {
+  color: #0c0b0b;
+  background: #404D5E;
+}
+
+.button:hover {
+  background: #111010;
+  transform: rotate(5deg);
+}
+
+.button.c:hover,
+.button.l:hover {
+  background: #0f0e0d;
+  color: #fff;
+}
+
+.blink-me {
+  color: #0b0b0a;
+}
+  </style>
+  <script>
+    function clickClrEvent() { 
+    document.getElementById('txt2').value="";
+    document.getElementById('val').innerText = "";
+    document.getElementById('n2').innerText = "";
+    document.getElementById('oper').innerText = "";
+    document.getElementById('res').innerText = "";
+
+}
+function clickEventA1() {
+    var setText = document.getElementById('txt2').value;
+    document.getElementById('txt2').value = setText + "";
+}
+function clickEventB() {
+    var setText = document.getElementById('txt2').value;
+    document.getElementById('txt2').value = setText + "%";
+}
+function clickDivEvent() {
+    var setText = document.getElementById('txt2').value;
+    document.getElementById('val').innerText = setText;
+    document.getElementById('oper').innerText = "/";
+    document.getElementById('txt2').value = "";
+    }
+    function clickEventC7() {
+        var setText = document.getElementById('txt2').value;
+        document.getElementById('txt2').value = setText + "7";
+    }
+    function clickEventC8() {
+        var setText = document.getElementById('txt2').value;
+        document.getElementById('txt2').value = setText + "8";
+    }
+    function clickEventC9() {
+        var setText = document.getElementById('txt2').value;
+        document.getElementById('txt2').value = setText + "9";
+    }
+    function clickMulEvent() {
+        var setText = document.getElementById('txt2').value;
+        document.getElementById('val').innerText = setText;
+        document.getElementById('oper').innerText = "*";
+        document.getElementById('txt2').value = "";
+    }
+    function clickEventC4() {
+        var setText = document.getElementById('txt2').value;
+        document.getElementById('txt2').value = setText + "4";
+    }
+    function clickEventC5() {
+        var setText = document.getElementById('txt2').value;
+        document.getElementById('txt2').value = setText + "5";
+    }
+    function clickEventC6() {
+        var setText = document.getElementById('txt2').value;
+        document.getElementById('txt2').value = setText + "6";
+    }
+function clickSubEvent() {
+    var setText = document.getElementById('txt2').value;
+    document.getElementById('val').innerText = setText;
+    document.getElementById('oper').innerText = "-";
+    document.getElementById('txt2').value = "";
+    }
+    function clickEventC1() {
+        var setText = document.getElementById('txt2').value;
+        document.getElementById('txt2').value = setText + "1";
+    }
+    function clickEventC2() {
+        var setText = document.getElementById('txt2').value;
+        document.getElementById('txt2').value = setText + "2";
+    }
+    function clickEventC3() {
+        var setText = document.getElementById('txt2').value;
+        document.getElementById('txt2').value = setText + "3";
+    }
+function clickAddEvent() {
+    var setText = document.getElementById('txt2').value;
+    document.getElementById('val').innerText = setText;
+    document.getElementById('oper').innerText = "+";
+    document.getElementById('txt2').value = ""; 
+    }
+    function clickEventC00() {
+        var setText = document.getElementById('txt2').value;
+        document.getElementById('txt2').value = setText + "00";
+    }
+    function clickEventC0() {
+        var setText = document.getElementById('txt2').value;
+        document.getElementById('txt2').value = setText + "0";
+    }
+    function clickEventG() {
+        var setText = document.getElementById('txt2').value;
+        document.getElementById('txt2').value = setText + ".";
+    }
+function clickResultEvent() {
+
+    var x = document.getElementById('val').innerText;
+    let first = parseFloat(x, 10);
+
+    var oper = document.getElementById('oper').innerText
+    var y = document.getElementById('txt2').value;
+    let second = parseFloat(y, 10);
+
+     
+
+    var setText = document.getElementById('txt2').value;
+    document.getElementById('n2').innerText = setText;
+
+    let r;
+    if (oper == "+") {
+        r = first + second;
+    }
+    else if (oper == "-") {
+        r = first - second;
+    }
+    else if (oper == "*") {
+        r = first * second;
+    }
+    else if (oper == "/") {
+        
+        r = first / second;
+        
+        }
+    document.getElementById('txt2').value = r;
+
+    
+
+}
+
+
+  </script>
+
+</body>
+</html>
